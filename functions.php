@@ -62,6 +62,10 @@ function foodie_pro_theme_setup() {
 
 	//* Add support for 4-column footer widgets.
 	add_theme_support( 'genesis-footer-widgets', 4 );
+
+	//* JTK EDITS
+	//* Load FontAwesome
+	add_action( 'wp_enqueue_scripts', 'font_awesome_styles');
 }
 
 add_action( 'genesis_setup', 'foodie_pro_includes', 20 );
@@ -187,4 +191,12 @@ function foodie_pro_footer_creds_text( $creds ) {
 		__( 'Built on the ', 'foodie-pro' ),
 		__( 'Powered by ', 'foodie-pro' )
 	);
+}
+
+/**
+ * JTK EDITS
+ * Include FontAwesome
+ */
+function font_awesome_styles() {
+	wp_enqueue_style( 'font-awesome', get_stylesheet_directory_uri().'/custom_css/font-awesome.css', array(), "4.2.0");
 }

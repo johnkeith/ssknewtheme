@@ -41,12 +41,12 @@ var build_state = 'prod',
     // sass src files are loaded with sass includes
     // no need to list them here (i.e. only one sass src)
     sass_files = {
-        "style.css": "scss/style.scss",
+        "custom_style.css": "sass/custom_style.css.scss",
     },
     // watch all .scss files in our sass directory
     // for changes
     watched_sass_files = [
-        'scss/*.scss'
+        'sass/*.scss'
     ];
 
     // haml_files = [{
