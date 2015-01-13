@@ -54,11 +54,11 @@ function foodie_pro_theme_setup() {
 	unregister_sidebar( 'header-right' );
 
 	//* Add support for custom header.
-	add_theme_support( 'genesis-custom-header', array(
-			'width'  => 800,
-			'height' => 340,
-		)
-	);
+	// add_theme_support( 'genesis-custom-header', array(
+	// 		'width'  => 800,
+	// 		'height' => 340,
+	// 	)
+	// );
 
 	//* Add support for 4-column footer widgets.
 	add_theme_support( 'genesis-footer-widgets', 4 );
