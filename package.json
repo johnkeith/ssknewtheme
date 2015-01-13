@@ -1,0 +1,22 @@
+{
+  "name": "SkinnyPress",
+  "version": "1.0.0",
+  "description": "SkinnyPress - A Genesis Child Theme",
+  "dependencies": {
+    "grunt": "^0.4.5",
+    "grunt-contrib-sass": "^0.8.0",
+    "grunt-contrib-watch": "^0.6.1"
+  },
+  "devDependencies": {
+    "bower": "^1.3.3"
+  },
+  "main": "Gruntfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "genesis"
+  ],
+  "author": "John Keith",
+  "license": "GPL"
+}
