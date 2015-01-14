@@ -67,6 +67,7 @@ function foodie_pro_theme_setup() {
 	//* Load FontAwesome
 	add_action( 'wp_enqueue_scripts', 'font_awesome_styles');
 	add_action( 'wp_enqueue_scripts', 'custom_styles');
+	add_action( 'wp_enqueue_scripts', 'custom_google_fonts_styles');
 }
 
 add_action( 'genesis_setup', 'foodie_pro_includes', 20 );
@@ -204,4 +205,8 @@ function font_awesome_styles() {
 
 function custom_styles() {
 	wp_enqueue_style( 'custom-style', get_stylesheet_directory_uri().'/custom_style.css', array(), "1.0.0");
+}
+
+function custom_google_fonts_styles() {
+	wp_enqueue_style( 'foodie-google-fonts', '//fonts.googleapis.com/css?family=Josefin+Sans:400,700|Open+Sans:300,400|Lato:300,400', array(), CHILD_THEME_VERSION );
 }

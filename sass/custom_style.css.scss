@@ -11,6 +11,27 @@ $bigger-box-shadow: 0 4px 7px 0 rgba(0, 0, 0, 0.2);
   transition-delay: $seconds;
 }
 
+// Basics (Typography, headers)
+body {
+  font-family: 'Lato', Helvetica, Arial, sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: #333;
+  font-family: "Josefin Sans", sans-serif;
+  font-size: auto;
+  padding: 0;
+}
+
+.entrytitle, .sitetitle, .widgettitle {
+  font-family: "Josefin Sans", sans-serif;
+}
+
 // Title
 
 // Navbar

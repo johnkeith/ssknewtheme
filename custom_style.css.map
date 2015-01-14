@@ -1,7 +1,7 @@
 {
 "version": 3,
-"mappings": "",
-"sources": [],
+"mappings": "AAcA,IAAK,CACH,WAAW,CAAE,oCAAoC,CAGnD,iBAKG,CACD,KAAK,CAAE,IAAI,CACX,WAAW,CAAE,0BAA0B,CACvC,SAAS,CAAE,IAAI,CACf,OAAO,CAAE,CAAC,CAGZ,mCAAsC,CACpC,WAAW,CAAE,0BAA0B",
+"sources": ["sass/custom_style.css.scss"],
 "names": [],
 "file": "custom_style.css"
 }
