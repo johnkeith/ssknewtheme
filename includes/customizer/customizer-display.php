@@ -52,7 +52,7 @@ function foodie_pro_add_customizer_styles() {
 	wp_add_inline_style( 'foodie-pro-theme', Customizer_Library_Styles()->build() );
 }
 
-add_action( 'foodie_pro_inline_styles', 'foodie_pro_build_styles' );
+// add_action( 'foodie_pro_inline_styles', 'foodie_pro_build_styles' );
 /**
  * Process user options to generate CSS needed to implement the choices.
  *
