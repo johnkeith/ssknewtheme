@@ -12,20 +12,36 @@ $bigger-box-shadow: 0 4px 7px 0 rgba(0, 0, 0, 0.2);
 }
 
 // Basics (Typography, headers)
+html {
+  // font-size: 125%
+}
+
 body {
+  @include responsive-text-size("base");
   font-family: 'Lato', Helvetica, Arial, sans-serif;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+h1, h2, h3, h4, h5, h6 {
   color: #333;
   font-family: "Josefin Sans", sans-serif;
   font-size: auto;
   padding: 0;
+}
+
+h1, .text-mega {
+  @include responsive-text-size("mega");
+}
+
+h2, .text-kilo, .entry-title {
+  @include responsive-text-size("kilo");
+}
+
+h3, .text-hecto {
+  @include responsive-text-size("hecto");
+}
+
+h4, .text-deca {
+  @include responsive-text-size("deca");
 }
 
 .entrytitle, .sitetitle, .widgettitle {
@@ -37,7 +53,15 @@ h6 {
 // Navbar
 
 // Main Content
+.home-bottom {
+  .entry-title {
+    @include responsive-text-size("hecto");
+  }
+}
 
 // Sidebar
-
+.widgettitle {
+  @include responsive-text-size("deca");
+  text-align: left;
+}
 // Responsive
