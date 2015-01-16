@@ -69,7 +69,8 @@ module.exports = function(grunt) {
                 files: watched_sass_files,
                 tasks: ["sass:"+build_state],
                 options: {
-                    livereload: true
+                    livereload: true,
+                    style: "normal"
                 }
             }
             // haml: {

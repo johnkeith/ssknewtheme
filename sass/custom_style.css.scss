@@ -13,12 +13,14 @@ $bigger-box-shadow: 0 4px 7px 0 rgba(0, 0, 0, 0.2);
 
 // Basics (Typography, headers)
 html {
-  // font-size: 125%
 }
 
 body {
   @include responsive-text-size("base");
-  font-family: 'Lato', Helvetica, Arial, sans-serif;
+  color: #666;
+  font-family: 'Lato', sans-serif;
+  // font-size: 18px;
+  font-weight: 300;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -49,11 +51,11 @@ h4, .text-deca {
 }
 
 // Title
-.site-logo {
+.site-header {
   margin: 0 auto;
-  max-width: 680px;
-  text-align: center;
+  max-width: 842px;
 }
+
 .header-image {
  .site-description {
     @include responsive-text-size("deca");
@@ -61,6 +63,12 @@ h4, .text-deca {
   }
 }
 // Navbar
+.genesis-nav-menu {
+  .menu-item {
+    @include responsive-text-size("deca");
+    font-weight: 300;
+  }
+}
 
 // Main Content
 .home-bottom {
