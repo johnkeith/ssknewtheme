@@ -13,13 +13,13 @@ $bigger-box-shadow: 0 4px 7px 0 rgba(0, 0, 0, 0.2);
 
 // Basics (Typography, headers)
 html {
+  font-size: 18px;
 }
 
 body {
   @include responsive-text-size("base");
   color: #666;
   font-family: 'Lato', sans-serif;
-  // font-size: 18px;
   font-weight: 300;
 }
 
@@ -71,7 +71,7 @@ h4, .text-deca {
 }
 
 // Main Content
-.home-bottom {
+.home-bottom, .home-middle {
   .entry-title {
     @include responsive-text-size("hecto");
   }
