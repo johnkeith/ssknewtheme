@@ -55,8 +55,8 @@ function foodie_pro_theme_setup() {
 
 	//* Add support for custom header.
 	add_theme_support( 'genesis-custom-header', array(
-			'width'  => 960,
-			'height' => 80,
+			'width'  => 1886,
+			'height' => 224
 		)
 	);
 
