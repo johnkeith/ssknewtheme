@@ -2,8 +2,9 @@
 @import 'typography';
 // Sass Variables and Mixins
 $main-color: rgba(117, 200, 201, 1);
-$main-lighter: rgba(117, 200, 201, 0.8);
-$light-grey: rgba(189, 195, 199,1.0);
+$main-lighter: rgba(117, 200, 201, 0.5);
+$light-grey: rgba(189, 195, 199, 1.0);
+$lighter-grey: rgba(189, 195, 199, 0.5);
 $basic-box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.26);
 $bigger-box-shadow: 0 4px 7px 0 rgba(0, 0, 0, 0.2);
 
@@ -81,6 +82,7 @@ h4, .text-deca {
 }
 // Navbar
 .genesis-nav-menu {
+  border-bottom-color: $lighter-grey;
   border-top: 0px;
   .menu-item {
     @include responsive-text-size("deca");
@@ -88,7 +90,53 @@ h4, .text-deca {
   }
 }
 
-// Main Content
+.content {
+  max-width: 720px;
+  width: 720px;
+}
+.sidebar-primary {
+  max-width: 340px;
+  width: 340px;
+}
+
+.entry-content {
+  border-bottom: 1px solid $lighter-grey;
+  padding: 0 0 1rem;
+  p {
+    margin: 0 0 1rem;
+  }
+  a.more-link {
+    background: white;
+    border: 1px solid $main-color;
+    color: $main-color;
+    padding: 1rem 1.5rem;
+    transition: all 0.2s ease-in-out;
+    &:hover {
+      background: $main-color;
+      color: white;
+    }
+  }
+}
+
+.home-middle {
+  p {
+    margin: 1rem 0 0 0;
+  }
+  .more-link {
+    text-align: center;
+    width: 100%;
+  }
+  .alignleft {
+    margin-right: 0;
+  }
+}
+
+.home-bottom {
+  .alignleft {
+    margin-right: 20px;
+  }
+}
+
 .home-bottom, .home-middle {
   .entry-title {
     @include responsive-text-size("hecto");

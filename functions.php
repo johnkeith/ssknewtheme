@@ -53,21 +53,24 @@ function foodie_pro_theme_setup() {
 	//* Unregister header right sidebar.
 	unregister_sidebar( 'header-right' );
 
-	//* Add support for custom header.
-	add_theme_support( 'genesis-custom-header', array(
-			'width'  => 1886,
-			'height' => 224
-		)
-	);
-
 	//* Add support for 4-column footer widgets.
 	add_theme_support( 'genesis-footer-widgets', 4 );
 
 	//* JTK EDITS
-	//* Load FontAwesome
-	add_action( 'wp_enqueue_scripts', 'font_awesome_styles');
-	add_action( 'wp_enqueue_scripts', 'custom_styles');
-	add_action( 'wp_enqueue_scripts', 'custom_google_fonts_styles');
+		//* Load FontAwesome
+		add_action( 'wp_enqueue_scripts', 'font_awesome_styles');
+		add_action( 'wp_enqueue_scripts', 'custom_styles');
+		add_action( 'wp_enqueue_scripts', 'custom_google_fonts_styles');
+
+		//* Add support for custom header.
+		add_theme_support( 'genesis-custom-header', array(
+				'width'  => 1886,
+				'height' => 224
+			)
+		);
+
+		//* Add new featured image sizes.
+		add_image_size( 'larger-horizontal-thumbnail', 720, 480, true );
 }
 
 add_action( 'genesis_setup', 'foodie_pro_includes', 20 );
@@ -157,9 +160,9 @@ add_filter( 'the_content_more_link', 'foodie_pro_read_more_link' );
  * @param  string $more
  * @return string Modified read more text.
  */
-function foodie_pro_read_more_link() {
-	return '...</p><p><a class="more-link" href="' . get_permalink() . '">' . __( 'Read More', 'foodie-pro' ) . ' &raquo;</a></p>';
-}
+// function foodie_pro_read_more_link() {
+// 	return '...</p><p><a class="more-link" href="' . get_permalink() . '">' . __( 'Read More', 'foodie-pro' ) . ' &raquo;</a></p>';
+// }
 
 add_filter( 'genesis_comment_form_args', 'foodie_pro_comment_form_args' );
 /**
@@ -186,7 +189,7 @@ add_filter( 'genesis_footer_creds_text', 'foodie_pro_footer_creds_text' );
  */
 function foodie_pro_footer_creds_text( $creds ) {
 	return sprintf(
-		'[footer_copyright before="%s "] &middot; [footer_childtheme_link before=""] %s <a href="http://shaybocks.com/">%s</a> &middot; %s [footer_genesis_link url="http://www.studiopress.com/" before=""] &middot; [footer_wordpress_link before=" %s"]',
+		'[footer_copyright before="%s "] &middot; [footer_childtheme_link before=""] %s <a href="http://shaybocks.com/">%s</a> &middot; Altered by John Keith &middot;%s [footer_genesis_link url="http://www.studiopress.com/" before=""] &middot; [footer_wordpress_link before=" %s"]',
 		__( 'Copyright', 'foodie-pro' ),
 		__( 'by', 'foodie-pro' ),
 		CHILD_THEME_DEVELOPER,
@@ -209,4 +212,8 @@ function custom_styles() {
 
 function custom_google_fonts_styles() {
 	wp_enqueue_style( 'foodie-google-fonts', '//fonts.googleapis.com/css?family=Josefin+Sans:400,700|Open+Sans:300,400|Lato:300,400', array(), CHILD_THEME_VERSION );
+}
+
+function foodie_pro_read_more_link() {
+	return '...</p><p><a class="more-link" href="' . get_permalink() . '">' . __( 'Read More', 'foodie-pro' ) . ' <i class="fa fa-long-arrow-right"></i></a></p>';
 }
