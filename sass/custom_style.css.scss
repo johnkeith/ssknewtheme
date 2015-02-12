@@ -88,6 +88,21 @@ h4, .text-deca {
     @include responsive-text-size("deca");
     font-weight: 300;
   }
+  .sub-menu {
+    border-bottom: 5px solid $lighter-grey;
+    width: auto;
+    .menu-item {
+      display: block;
+      a {
+      white-space: nowrap;
+        width: auto;
+        &:hover {
+          background: $main-color;
+          color: white;
+        }
+      }
+    }
+  }
 }
 
 .content {
