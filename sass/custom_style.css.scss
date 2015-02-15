@@ -13,6 +13,18 @@ $bigger-box-shadow: 0 4px 7px 0 rgba(0, 0, 0, 0.2);
   transition-delay: $seconds;
 }
 
+@mixin basic-button($background-color, $text-color) {
+  background: $background-color;
+  border: 1px solid $text-color;
+  color: $text-color;
+  padding: 1rem 1.5rem;
+  transition: all 0.2s ease-in-out;
+  &:hover {
+    background: $text-color;
+    color: $background-color;
+  }
+}
+
 // Basics (Typography, headers)
 html {
   font-size: 18px;
@@ -107,7 +119,7 @@ h4, .text-deca {
 
 .content {
   max-width: 720px;
-  width: 720px;
+  // width: 720px;
 }
 .sidebar-primary {
   max-width: 340px;
@@ -121,19 +133,14 @@ h4, .text-deca {
     margin: 0 0 1rem;
   }
   a.more-link {
-    background: white;
-    border: 1px solid $main-color;
-    color: $main-color;
-    padding: 1rem 1.5rem;
-    transition: all 0.2s ease-in-out;
-    &:hover {
-      background: $main-color;
-      color: white;
-    }
+    @include basic-button(white, $main-color);
   }
 }
 
 .home-middle {
+  .entry-header .entry-meta {
+    margin-top: 0;
+  }
   p {
     margin: 1rem 0 0 0;
   }
@@ -166,9 +173,89 @@ article {
   }
 }
 
+.entry-footer .entry-meta {
+  border-top: 0;
+  // @include responsive-text-size("deci")
+}
+
 // Sidebar
 .widgettitle {
   @include responsive-text-size("deca");
   text-align: left;
 }
-// Responsive
+
+// Recipe Index
+.widget-area.recipes-top {
+  background: white;
+  .widget_categories, .widget_archive {
+    // width: 120px;
+    // border-radius: 3px;
+    .widget-wrap {
+      // background: #fff url('images/dropdown.png') right bottom no-repeat;
+
+      overflow: hidden;
+      select {
+        padding: 10px;
+        width: 90%;
+        border: 1px solid #ccc;
+        border-radius: 0;
+        box-shadow: none;
+        background: transparent;
+        background-image: none;
+        -webkit-appearance: none;
+      }
+      select:focus {
+        outline: none;
+      }
+    }
+  }
+}
+.widget-area.recipes-bottom {
+  .featured-content.featuredpost {
+    .widget-wrap {
+      .widget-title {
+        @include responsive-text-size("kilo");
+        text-align: center;
+      }
+      select {
+        .select-style {
+            border: 1px solid #ccc;
+            width: 120px;
+            border-radius: 3px;
+            overflow: hidden;
+            background: #fafafa url("img/icon-select.png") no-repeat 90% 50%;
+        }
+
+        .select-style select {
+            padding: 5px 8px;
+            width: 130%;
+            border: none;
+            box-shadow: none;
+            background: transparent;
+            background-image: none;
+            -webkit-appearance: none;
+        }
+
+        .select-style select:focus {
+            outline: none;
+        }
+      }
+
+      .entry {
+        .entry-header {
+          .entry-title {
+            @include responsive-text-size("base");
+          }
+        }
+      }
+      .more-from-category {
+        a {
+          @include basic-button(white, $main-color);
+        }
+      }
+    }
+  }
+}
+.recipes-bottom .widget {
+  border-bottom: 1px solid $lighter-grey;
+}
