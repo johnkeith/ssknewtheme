@@ -267,3 +267,24 @@ article {
 .recipes-bottom .widget {
   border-bottom: 1px solid $lighter-grey;
 }
+
+// Responsive
+@media only screen and (max-width: 767px) {
+  .header-image .site-description {
+    margin-top: 1.5rem;
+  }
+}
+
+
+@media only screen and (max-width: 420px) {
+  .header-image .site-description {
+    display: none;
+  }
+  .site-header .title-area {
+    padding: 0;
+  }
+  // .menu-toggle {
+  //   border-top: 0;
+  //   border-bottom: 0;
+  // }
+}
