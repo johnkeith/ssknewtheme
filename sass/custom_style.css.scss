@@ -83,7 +83,13 @@ h4, .text-deca {
     padding: 0;
   }
 }
-
+.header-image .site-header {
+  background-position: top !important;
+  margin-top: 1rem;
+}
+.header-image .site-title a {
+  min-height: 0;
+}
 .header-image, .title-area {
  .site-description {
     @include responsive-text-size("deca");
@@ -193,20 +199,20 @@ article {
     .widget-wrap {
       // background: #fff url('images/dropdown.png') right bottom no-repeat;
 
-      overflow: hidden;
-      select {
-        padding: 10px;
-        width: 90%;
-        border: 1px solid #ccc;
-        border-radius: 0;
-        box-shadow: none;
-        background: transparent;
-        background-image: none;
-        -webkit-appearance: none;
-      }
-      select:focus {
-        outline: none;
-      }
+      // overflow: hidden;
+      // select {
+      //   padding: 10px;
+      //   width: 90%;
+      //   border: 1px solid #ccc;
+      //   border-radius: 0;
+      //   box-shadow: none;
+      //   background: transparent;
+      //   background-image: none;
+      //   -webkit-appearance: none;
+      // }
+      // select:focus {
+      //   outline: none;
+      // }
     }
   }
 }
