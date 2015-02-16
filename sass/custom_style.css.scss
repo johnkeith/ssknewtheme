@@ -5,6 +5,7 @@ $main-color: rgba(117, 200, 201, 1);
 $main-lighter: rgba(117, 200, 201, 0.5);
 $light-grey: rgba(189, 195, 199, 1.0);
 $lighter-grey: rgba(189, 195, 199, 0.5);
+$lightest-grey: rgba(189, 195, 199, 0.1);
 $basic-box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.26);
 $bigger-box-shadow: 0 4px 7px 0 rgba(0, 0, 0, 0.2);
 
@@ -192,16 +193,17 @@ article {
 
 // Recipe Index
 .widget-area.recipes-top {
-  background: white;
+  background: $lightest-grey;
+  border: 1px solid $lighter-grey;
   .widget_categories, .widget_archive {
     // width: 120px;
     // border-radius: 3px;
     .widget-wrap {
       // background: #fff url('images/dropdown.png') right bottom no-repeat;
-
+      // padding: 10px;
       // overflow: hidden;
-      // select {
-      //   padding: 10px;
+      select {
+        background: white;
       //   width: 90%;
       //   border: 1px solid #ccc;
       //   border-radius: 0;
@@ -209,7 +211,7 @@ article {
       //   background: transparent;
       //   background-image: none;
       //   -webkit-appearance: none;
-      // }
+      }
       // select:focus {
       //   outline: none;
       // }
@@ -220,7 +222,7 @@ article {
   .featured-content.featuredpost {
     .widget-wrap {
       .widget-title {
-        @include responsive-text-size("kilo");
+        @include responsive-text-size("hecto");
         text-align: center;
       }
       select {
