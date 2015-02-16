@@ -137,7 +137,7 @@ h4, .text-deca {
   border-bottom: 1px solid $lighter-grey;
   padding: 0 0 1rem;
   p {
-    margin: 0 0 1rem;
+    margin: 0 0 1rem 0;
   }
   a.more-link {
     @include basic-button(white, $main-color);
@@ -145,6 +145,13 @@ h4, .text-deca {
 }
 
 .home-middle {
+  .featured-content.featuredpost {
+    article {
+      .entry-content {
+        padding: 0 0 2rem;
+      }
+    }
+  }
   .entry-header .entry-meta {
     margin-top: 0;
   }
@@ -171,7 +178,9 @@ h4, .text-deca {
     @include responsive-text-size("hecto");
   }
 }
-
+.entry {
+  padding: 0;
+}
 article {
   .entry-header {
     .entry-title {
@@ -196,7 +205,13 @@ article {
   border-top: 0;
   // @include responsive-text-size("deci")
 }
-
+.after-entry {
+  .widget {
+    border: 1px solid $lighter-grey;
+    padding: 20px;
+    width: 100%;
+  }
+}
 // Sidebar
 .widgettitle {
   @include responsive-text-size("deca");
@@ -237,36 +252,13 @@ article {
         @include responsive-text-size("hecto");
         text-align: center;
       }
-      select {
-        .select-style {
-            border: 1px solid #ccc;
-            width: 120px;
-            border-radius: 3px;
-            overflow: hidden;
-            background: #fafafa url("img/icon-select.png") no-repeat 90% 50%;
-        }
-
-        .select-style select {
-            padding: 5px 8px;
-            width: 130%;
-            border: none;
-            box-shadow: none;
-            background: transparent;
-            background-image: none;
-            -webkit-appearance: none;
-        }
-
-        .select-style select:focus {
-            outline: none;
-        }
-      }
-
       .entry {
         .entry-header {
           .entry-title {
             @include responsive-text-size("base");
           }
         }
+
       }
       .more-from-category {
         a {
