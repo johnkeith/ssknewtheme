@@ -14,14 +14,15 @@ $bigger-box-shadow: 0 4px 7px 0 rgba(0, 0, 0, 0.2);
   transition-delay: $seconds;
 }
 
-@mixin basic-button($background-color, $text-color) {
+@mixin basic-button($background-color, $text-color, $padding-multiplier) {
   background: $background-color;
   border: 1px solid $text-color;
   color: $text-color;
-  padding: 1rem 1.5rem;
+  padding: (0.5rem * $padding-multiplier) (0.75rem * $padding-multiplier);
   transition: all 0.2s ease-in-out;
   &:hover {
     background: $text-color;
+    border: 1px solid $background-color;
     color: $background-color;
   }
 }
@@ -104,7 +105,7 @@ h4, .text-deca {
   border-bottom-color: $lighter-grey;
   border-top: 0px;
   .menu-item {
-    @include responsive-text-size("deca");
+    @include responsive-text-size("base");
     font-weight: 300;
   }
   .sub-menu {
@@ -140,7 +141,7 @@ h4, .text-deca {
     margin: 0 0 1rem 0;
   }
   a.more-link {
-    @include basic-button(white, $main-color);
+    @include basic-button(white, $main-color, 2);
   }
 }
 
@@ -205,11 +206,65 @@ article {
   border-top: 0;
   // @include responsive-text-size("deci")
 }
+
 .after-entry {
   .widget {
     border: 1px solid $lighter-grey;
     padding: 20px;
     width: 100%;
+  }
+}
+
+.entry-comments {
+  // border: 1px solid $lighter-grey;
+  margin: 20px 0 0 0;
+  padding: 20px;
+  h3 {
+    @include responsive-text-size("deca");
+  }
+  .comment-list {
+    .comment {
+      border-top: 1px solid $lighter-grey;
+    }
+  }
+  .comment-reply {
+    text-align: right;
+    .comment-reply-link {
+      @include responsive-text-size("deci");
+      @include basic-button(white, $main-color, 1);
+      font-family: 'Lato', sans-serif;
+      letter-spacing: normal;
+      text-decoration: none;
+      text-transform: none;
+    }
+  }
+}
+
+.comment-respond {
+  border: 1px solid $lighter-grey;
+  padding: 20px;
+  h3 {
+    @include responsive-text-size("deca");
+  }
+  form {
+    p {
+      label {
+        font-weight: bold;
+        padding-bottom: 5px;
+      }
+      input, textarea {
+        border: 1px solid $main-lighter;
+      }
+      &.form-submit {
+        input[type="submit"] {
+          @include responsive-text-size("deci");
+          @include basic-button($main-color, white, 1);
+          font-family: 'Lato', sans-serif;
+          letter-spacing: normal;
+          text-transform: none;
+        }
+      }
+    }
   }
 }
 // Sidebar
@@ -223,25 +278,10 @@ article {
   background: $lightest-grey;
   border: 1px solid $lighter-grey;
   .widget_categories, .widget_archive {
-    // width: 120px;
-    // border-radius: 3px;
     .widget-wrap {
-      // background: #fff url('images/dropdown.png') right bottom no-repeat;
-      // padding: 10px;
-      // overflow: hidden;
       select {
         background: white;
-      //   width: 90%;
-      //   border: 1px solid #ccc;
-      //   border-radius: 0;
-      //   box-shadow: none;
-      //   background: transparent;
-      //   background-image: none;
-      //   -webkit-appearance: none;
       }
-      // select:focus {
-      //   outline: none;
-      // }
     }
   }
 }
@@ -262,7 +302,7 @@ article {
       }
       .more-from-category {
         a {
-          @include basic-button(white, $main-color);
+          @include basic-button(white, $main-color, 2);
         }
       }
     }
@@ -271,7 +311,6 @@ article {
 .recipes-bottom .widget {
   border-bottom: 1px solid $lighter-grey;
 }
-
 
 // Recipe Card (Edamam)
 

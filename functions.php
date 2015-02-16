@@ -62,6 +62,8 @@ function foodie_pro_theme_setup() {
 		add_action( 'wp_enqueue_scripts', 'custom_styles');
 		add_action( 'wp_enqueue_scripts', 'custom_google_fonts_styles');
 
+		add_filter( 'comment_form_defaults', 'sp_remove_comment_form_allowed_tags' );
+
 		//* Add support for custom header.
 		add_theme_support( 'genesis-custom-header', array(
 				'width'  => 1886,
@@ -217,3 +219,9 @@ function custom_google_fonts_styles() {
 function foodie_pro_read_more_link() {
 	return '...</p><p><a class="more-link" href="' . get_permalink() . '">' . __( 'Read More', 'foodie-pro' ) . ' <i class="fa fa-long-arrow-right"></i></a></p>';
 }
+
+function sp_remove_comment_form_allowed_tags( $defaults ) {
+	$defaults['comment_notes_after'] = '';
+	return $defaults;
+}
+
