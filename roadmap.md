@@ -1,5 +1,5 @@
-Styling for archive page
-Styling of recipe card
+Styling for archive page - DONE!
+Styling of recipe card - DONE!
 Styling of comments
 Implement sidebar widgets
 Styling of widgets

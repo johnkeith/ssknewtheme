@@ -268,6 +268,33 @@ article {
   border-bottom: 1px solid $lighter-grey;
 }
 
+// Recipe Card (Edamam)
+
+#recipe-container {
+  border: 1px solid $lighter-grey;
+  #recipe-inner {
+    font-family: 'Lato', sans-serif;
+    .title-print {
+      #recipe-title {
+        h2 {
+          @include responsive-text-size("hecto");
+          font-family: 'Lato', sans-serif;
+
+        }
+      }
+    }
+    .recipe-clear {
+      border-top: 1px solid $lighter-grey;
+      padding-top: 10px;
+    }
+    h3 {
+      @include responsive-text-size("deca");
+      font-family: 'Lato', sans-serif;
+
+    }
+  }
+}
+
 // Responsive
 @media only screen and (max-width: 767px) {
   .header-image .site-description {
