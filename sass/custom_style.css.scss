@@ -178,6 +178,18 @@ article {
       @include responsive-text-size("hecto"); 
     }
   }
+  .adjacent-entry-pagination {
+    display: none;
+  }
+  .entry-footer {
+    .entry-meta {
+      @include responsive-text-size("deci");
+      font-family: 'Lato', sans-serif;
+      a {
+        color: $main-color;
+      }
+    }
+  }
 }
 
 .entry-footer .entry-meta {
@@ -267,6 +279,7 @@ article {
 .recipes-bottom .widget {
   border-bottom: 1px solid $lighter-grey;
 }
+
 
 // Recipe Card (Edamam)
 

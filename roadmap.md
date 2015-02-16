@@ -4,3 +4,4 @@ Styling of comments
 Implement sidebar widgets
 Styling of widgets
 Fixed ad on sidebar
+Footer on home page
